@@ -34,8 +34,8 @@ public class TrainerServiceImpl implements TrainerServiceInterface {
     }
 
     @Override
-    public void deleteTrainer(Trainer trainer) {
-        trainerRepository.delete(trainer);
+    public void deleteTrainer(Integer trainerid) {
+        trainerRepository.deleteById(trainerid);
     }
 
     @Override
