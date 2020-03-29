@@ -52,9 +52,8 @@ public class TrainerController {
     }
 
     @PostMapping("/preupdate")
-    public String preUpdateTrainer(@RequestParam("TrainerID") String trainerId, ModelMap mm) {
-        int id = Integer.parseInt(trainerId);
-        Trainer trainer = trainerServiceInterface.getTrainerbyId(id);
+    public String preUpdateTrainer(@RequestParam("TrainerID") Integer trainerId, ModelMap mm) {
+        Trainer trainer = trainerServiceInterface.getTrainerbyId(trainerId);
         mm.addAttribute("Trainer", trainer);
         return "update";
     }
