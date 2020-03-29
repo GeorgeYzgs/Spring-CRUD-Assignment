@@ -40,11 +40,7 @@ public class TrainerServiceImpl implements TrainerServiceInterface {
 
     @Override
     public void updateTrainer(Trainer trainer) {
-        Trainer updatedTrainer = trainerRepository.findById(trainer.getTrainerid()).get();
-        updatedTrainer.setFirstname(trainer.getFirstname());
-        updatedTrainer.setLastname(trainer.getLastname());
-        updatedTrainer.setSubject(trainer.getSubject());
-        trainerRepository.save(updatedTrainer);
+        trainerRepository.save(trainer);
     }
 
     @Override
