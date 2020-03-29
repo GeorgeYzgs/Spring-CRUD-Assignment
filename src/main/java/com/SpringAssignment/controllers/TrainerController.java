@@ -32,10 +32,8 @@ public class TrainerController {
     }
 
     @PostMapping("/delete")
-    public String deleteTrainer(@RequestParam("TrainerID") String trainerId, ModelMap mm) {
-        int id = Integer.parseInt(trainerId);
-        Trainer trainer = trainerServiceInterface.getTrainerbyId(id);
-        trainerServiceInterface.deleteTrainer(trainer);
+    public String deleteTrainer(@RequestParam("TrainerID") Integer trainerId, ModelMap mm) {
+        trainerServiceInterface.deleteTrainer(trainerId);
         mm.addAttribute("message", "Trainer has been deleted!");
         return getAllTrainers(mm);
     }
