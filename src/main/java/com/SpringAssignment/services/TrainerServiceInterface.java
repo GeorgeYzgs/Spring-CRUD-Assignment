@@ -20,7 +20,7 @@ public interface TrainerServiceInterface {
 
     public Trainer getTrainerbyId(int id);
 
-    public void deleteTrainer(Trainer trainer);
+    public void deleteTrainer(Integer trainerid);
 
     public void updateTrainer(Trainer trainer);
 
